@@ -1,6 +1,5 @@
 package com.order.service.impl;
 
-import com.order.model.enums.ProductType;
 import com.order.service.OrderService;
 import com.order.service.feign.CardService;
 import lombok.RequiredArgsConstructor;
@@ -22,8 +21,7 @@ public class OrderServiceImpl implements OrderService {
         Long orderId = cardService.getOrderId(userName);
         List<String> products = cardService.placeOrder(userName);
         for (String product : products) {
-            ProductType productType = ProductType.valueOf(product);
-            documentCreateService.createDocuments(productType, orderId);
+            documentCreateService.createDocuments(product, orderId);
         }
     }
 }

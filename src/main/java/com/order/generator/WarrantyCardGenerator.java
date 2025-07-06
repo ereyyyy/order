@@ -3,7 +3,9 @@ package com.order.generator;
 import com.order.model.dto.OrderMessageDto;
 import com.order.model.enums.DocumentType;
 import com.order.service.rabbit.MessageProducer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WarrantyCardGenerator implements DocumentGenerator{
     private final MessageProducer messageProducer;
 

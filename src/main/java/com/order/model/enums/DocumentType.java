@@ -14,5 +14,4 @@ public enum DocumentType {
 
     private final String name;
     private final String documentContent;
-
 }
